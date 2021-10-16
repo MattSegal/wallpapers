@@ -1,8 +1,6 @@
-https://youness.net/linux/set-random-wallpapers-unsplash-com-ubuntu
+# Gnome random unsplash wallpaper
 
-Now let’s execute it every 5 minutes using crontab, edit it:
-
-Choose an editor with its number, then add at the end the line:
+Thanks to: https://youness.net/linux/set-random-wallpapers-unsplash-com-ubuntu
 
 ```bash
 crontab -e
