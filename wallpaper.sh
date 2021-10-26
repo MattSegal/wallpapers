@@ -5,8 +5,11 @@ pushd $SCRIPT_DIR
 . env/bin/activate
 . secrets.sh
 URL=$(python3 wallpaper.py $SEARCH)
- wget -O ./wallpaper.jpg $URL
-gsettings set org.gnome.desktop.background picture-uri file://$SCRIPT_DIR/wallpaper.jpg
+TIMESTAMP=$(date +%s)
+FNAME="$TIMESTAMP.jpg"
+mkdir -p wallpapers
+wget -O "./wallpapers/${FNAME}" $URL
+gsettings set org.gnome.desktop.background picture-uri "file://$SCRIPT_DIR/wallpapers/${FNAME}"
 popd
 
 
