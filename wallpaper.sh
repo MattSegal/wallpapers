@@ -2,9 +2,7 @@
 SEARCH="${1:-trees}"
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 pushd $SCRIPT_DIR
-. env/bin/activate
-. secrets.sh
-URL=$(python3 wallpaper.py $SEARCH)
+URL="https://source.unsplash.com/1920x1080/?$SEARCH"
 TIMESTAMP=$(date +%s)
 FNAME="$TIMESTAMP.jpg"
 mkdir -p wallpapers
